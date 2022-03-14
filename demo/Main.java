@@ -1,12 +1,18 @@
 package com.example.demo;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
-@Component
-public class Main {
-	@Autowired
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-	public static void main(String[] args) {
+public class Main {
+public static void main(String[] args) {
+	ApplicationContext context=new AnnotationConfigApplicationContext();
+	Employe employe=context.getBean("employe",Employe.class);
+	System.out.println(employe);
+	try {
+		employe.Employee();
+	} catch (Exception e) {
+		
 		
 	}
+}
 }
